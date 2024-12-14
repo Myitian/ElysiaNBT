@@ -18,7 +18,7 @@ namespace Example
     class Ex
     {
         public AA Val { get; set; }
-        [NbtPropertyName("$ %")]
+        [NbtEntryName("$ %")]
         private Vector2 VV = new Vector2(114.514f, 1919.810f);
     }
 

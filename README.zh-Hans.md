@@ -1,4 +1,6 @@
 # ElysiaNBT
+[![NuGet version (ElysiaNBT)](https://img.shields.io/nuget/v/ElysiaNBT?color=6cf&style=for-the-badge)](https://www.nuget.org/packages/ElysiaNBT)
+
 [English](./README.md) | **简体中文**
 
 又一个NBT序列化/反序列化器，让序列化/反序列化NBT就像JSON一样简单。
@@ -26,4 +28,4 @@
 - [minecraft.wiki](https://minecraft.wiki/w/NBT_format)
 - [wiki.vg（minecraft.wiki上的归档）](https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/NBT)
 
-<img src="./icon.png" width="256">
+<img src="./icon.png" width="256" alt="爱门">
