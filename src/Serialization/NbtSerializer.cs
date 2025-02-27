@@ -6,7 +6,6 @@ namespace ElysiaNBT.Serialization;
 
 public static class NbtSerializer
 {
-
     [RequiresDynamicCode("Type.MakeGenericType()")]
     [RequiresUnreferencedCode("Type.GetInterfaces()")]
     public static object? Deserialize(INbtReader reader, Type type)

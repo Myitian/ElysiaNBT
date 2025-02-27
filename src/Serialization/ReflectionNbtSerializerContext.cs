@@ -52,6 +52,7 @@ public class ReflectionNbtSerializerContext : NbtSerializerContext
         typeof(IEnumerableNbtConverter<>),
         typeof(DictionaryLikeNbtConverter<>),
         typeof(EnumNbtConverter<>),
+        typeof(NullableNbtConverter<>),
     }.ToFrozenSet();
     protected readonly static FrozenDictionary<Type, INbtConverter> _basicTypeConverters = new Dictionary<Type, INbtConverter>()
     {
@@ -95,8 +96,8 @@ public class ReflectionNbtSerializerContext : NbtSerializerContext
     {
         return new()
         {
-            RegisteredReadConverters = [.. RegisteredReadConverters, .. read],
-            RegisteredWriteConverters = [.. RegisteredWriteConverters, .. write],
+            RegisteredReadConverters = read is null ? RegisteredReadConverters : [.. RegisteredReadConverters, .. read],
+            RegisteredWriteConverters = write is null ? RegisteredWriteConverters : [.. RegisteredWriteConverters, .. write]
         };
     }
     public virtual ReflectionNbtSerializerContext WithConverterOverrides(
@@ -296,10 +297,10 @@ public class ReflectionNbtSerializerContext : NbtSerializerContext
                 return b0 == b;
             GenericParameterAttributes attr = a.GenericParameterAttributes;
             if ((attr & GenericParameterAttributes.NotNullableValueTypeConstraint) is not GenericParameterAttributes.None
-                && b.IsValueType)
+                && !b.IsValueType)
                 return false;
             if ((attr & GenericParameterAttributes.ReferenceTypeConstraint) is not GenericParameterAttributes.None
-                && !b.IsValueType)
+                && b.IsValueType)
                 return false;
             if ((attr & GenericParameterAttributes.AllowByRefLike) is GenericParameterAttributes.None
                 && b.IsByRefLike)

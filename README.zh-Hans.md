@@ -1,5 +1,5 @@
 # ElysiaNBT
-[![NuGet version (ElysiaNBT)](https://img.shields.io/nuget/v/ElysiaNBT?color=6cf&style=for-the-badge)](https://www.nuget.org/packages/ElysiaNBT)
+[![NuGet version (ElysiaNBT)](https://img.shields.io/nuget/v/ElysiaNBT?color=FF9AFC&style=for-the-badge)](https://www.nuget.org/packages/ElysiaNBT)
 
 [English](./README.md) | **简体中文**
 
